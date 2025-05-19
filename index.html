@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Microscope Measurement Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 20px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Microscope Specimen Sizing Tool</h2><h3>Enhanced Interface for Academic Precision</h3>
+
+    <form method="POST">
+      <fieldset>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+
+        <label for="microscope_size">Microscope Size (mm):</label>
+        <input type="number" step="0.01" name="microscope_size" id="microscope_size" required>
+
+        <label for="magnification">Magnification:</label>
+        <input type="number" step="0.01" name="magnification" id="magnification" required>
+
+        <input type="submit" value="Calculate">
+      </fieldset>
+    </form>
+
+    {% if result %}
+      <h3>Actual Size: {{ result }} mm</h3>
+    {% endif %}
+    
+  </div>
+</body>
+</html>
